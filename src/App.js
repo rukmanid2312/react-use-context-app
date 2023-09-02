@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createContext } from "react";
+import Header from "./Header/Header";
 
+export const ThemeContext = createContext();
+export const UserContext = createContext();
 function App() {
+  const theme = { dark: "dark", light: "light" };
+  const user = { name: "Ramesh", age: 34 };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeContext.Provider value={theme}>
+        <UserContext.Provider value={user}>
+          <Header />
+        </UserContext.Provider>
+      </ThemeContext.Provider>
     </div>
   );
 }

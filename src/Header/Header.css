@@ -1,0 +1,7 @@
+.header{
+    color: #fff;
+    background-color: red;
+}
+.header > h1{
+    color: #fff;
+}
